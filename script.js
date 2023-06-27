@@ -63,7 +63,6 @@ fetch('becode.json')
   })
 }
 
-//Exercise 2
 
 
     
