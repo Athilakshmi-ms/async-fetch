@@ -44,6 +44,8 @@ fetchName('Athi')
 })
 */
 
+//Exercise 1
+
 let displayRules = () => {
 fetch('becode.json')
 .then(response => response.json())
@@ -60,4 +62,8 @@ fetch('becode.json')
     console.log('There was an error!', error)
   })
 }
+
+//Exercise 2
+
+
     
