@@ -47,22 +47,18 @@ fetchName('Athi')
 //Exercise 1
 
 let displayRules = () => {
-fetch('becode.json')
-.then(response => response.json())
-.then(jsonFile => {
-    for(i=0; i<jsonFile.length; i++){
-        let unordList = document.createElement('ul');
-        let list = document.createElement('li')
-        unordList.appendChild(list)
-        document.body.appendChild(unordList)
-        list.innerText = jsonFile[i]
-    }
-})
-.catch(error => {
-    console.log('There was an error!', error)
-  })
-}
-
-
-
-    
+  fetch("becode.json")
+    .then((response) => response.json())
+    .then((jsonFile) => {
+      for (i = 0; i < jsonFile.length; i++) {
+        let unordList = document.createElement("ul");
+        let list = document.createElement("li");
+        unordList.appendChild(list);
+        document.body.appendChild(unordList);
+        list.innerText = jsonFile[i];
+      }
+    })
+    .catch((error) => {
+      console.log("There was an error!", error);
+    });
+};

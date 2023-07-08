@@ -1,4 +1,4 @@
-// When the button is clicked, handle the click event using JavaScript. Inside the event handler, retrieve the value entered in the text input 
+// When the button is clicked, handle the click event using JavaScript. Inside the event handler, retrieve the value entered in the text input
 
 // 1.Create a new HTML page with a text input and a button.
 // 2. When the button is clicked -->click event using JavaScript.
@@ -15,10 +15,9 @@
 // script.js
 
 // Get references to the input and submit button elements
-const input = document.getElementById('input');
-const submitButton = document.getElementById('button');
-const countries = document.getElementById('countries');
-
+const input = document.getElementById("input");
+const submitButton = document.getElementById("button");
+const countries = document.getElementById("countries");
 
 // Function to handle the button click event
 function handleClick() {
@@ -27,12 +26,12 @@ function handleClick() {
   const country = countries.value;
 
   // Make the fetch request to the Agify API
-//   fetch(`https://api.agify.io/?name=${name}`)
-fetch(`https://api.agify.io/?name=${name}&country_id=${country}`) 
-    .then(response => response.json())
-    .then(data => {
+  //   fetch(`https://api.agify.io/?name=${name}`)
+  fetch(`https://api.agify.io/?name=${name}&country_id=${country}`)
+    .then((response) => response.json())
+    .then((data) => {
       // Create a new div element to display the result
-      const resultDiv = document.createElement('div');
+      const resultDiv = document.createElement("div");
 
       // Set the content of the new div with the retrieved information
       resultDiv.textContent = `Name: ${data.name}, Age: ${data.age}`;
@@ -40,15 +39,13 @@ fetch(`https://api.agify.io/?name=${name}&country_id=${country}`)
       // Append the new div to the page
       document.body.appendChild(resultDiv);
     })
-    .catch(error => {
-      console.error('Error:', error);
+    .catch((error) => {
+      console.error("Error:", error);
     });
-    localStorage.setItem('name', data.name);
-    localStorage.setItem('age', data.age);
-    localStorage.setItem('country', data.country_id);
+  localStorage.setItem("name", data.name);
+  localStorage.setItem("age", data.age);
+  localStorage.setItem("country", data.country_id);
 }
 
-
-
 // Add a click event listener to the submit button
-submitButton.addEventListener('click', handleClick);
+submitButton.addEventListener("click", handleClick);
